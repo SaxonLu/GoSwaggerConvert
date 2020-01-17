@@ -1,0 +1,139 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "簡單的 go-swagger",
+    "title": "Go-Swagger-FriendAPI-Document FriendAPI",
+    "version": "0.0.1"
+  },
+  "host": "www.google.com",
+  "basePath": "/v1",
+  "paths": {
+    "/api/v1/friendGet": {
+      "post": {
+        "description": "取得好友清單",
+        "tags": [
+          "Friend"
+        ],
+        "operationId": "FriendGet",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "req_data": {
+                  "$ref": "#/definitions/FriendGetReq"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/FriendGetResp"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "FriendGetReq": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "description": "時間戳",
+          "type": "string",
+          "x-go-name": "Time",
+          "example": "1567765485000"
+        },
+        "user_id": {
+          "description": "用戶ID\nexampie:e5d8r33t9",
+          "type": "string",
+          "x-go-name": "UserID"
+        }
+      },
+      "x-go-package": "GoSwaggerConvert/Req"
+    }
+  },
+  "responses": {
+    "FriendGetResp": {
+      "description": "好友資料 - 回傳資料",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "Data": {
+            "type": "object",
+            "properties": {
+              "is_mute": {
+                "description": "禁言",
+                "type": "string",
+                "x-go-name": "Is_mute",
+                "example": "0"
+              },
+              "is_top": {
+                "description": "最上層",
+                "type": "string",
+                "x-go-name": "Is_top",
+                "example": "0"
+              },
+              "status": {
+                "description": "狀態",
+                "type": "string",
+                "x-go-name": "Status",
+                "example": "0"
+              },
+              "user_alias": {
+                "description": "alias",
+                "type": "string",
+                "x-go-name": "User_alias",
+                "example": "llllkkkkk"
+              },
+              "user_id": {
+                "description": "uid",
+                "type": "string",
+                "x-go-name": "User_id",
+                "example": "0004a15b"
+              },
+              "user_image": {
+                "description": "照片",
+                "type": "string",
+                "x-go-name": "User_image",
+                "example": "default"
+              },
+              "user_name": {
+                "description": "名稱",
+                "type": "string",
+                "x-go-name": "User_name",
+                "example": "apple"
+              }
+            }
+          },
+          "m": {
+            "description": "訊息\nexmaple:請求成功",
+            "type": "string",
+            "x-go-name": "Msg"
+          },
+          "s": {
+            "description": "狀態",
+            "type": "string",
+            "x-go-name": "StatusValue",
+            "example": "Success"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ]
+}
