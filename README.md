@@ -4,7 +4,7 @@ Go-Swagger Demo
 目前進度
 
 - [x] Header Token 金鑰
-- [x] 01dev 連結
+- [x] API 連結
 - [x] Try It Out Button On Work
 - [x] Request Example Value | Model
 - [x] Expected Response Model
@@ -35,7 +35,7 @@ Go-Swagger Demo
 |-------------------------------|-----------------------------|
 |`Package main Go-Swagger MenuAPI`|package _ Title名稱 |
 |`簡單的 go-swagger` |Title解釋 |
-|`Host: 01cx.txuntest.com`|此API連結目標|
+|`Host: www.google.com`|此API連結目標|
 |`Version: 0.0.1`|此次Swagger文件版本|
 |`Security:`|啟用認證|
 |`SecurityDefinitions:`|認證設定|
